@@ -26,6 +26,36 @@
  - В INSTALLED_APPS добавить:
     - 'rest_framework',
     - 'corsheaders',
-    - 'backend'
+    - 'backend'*
     
-При этом backend - django-приложение для бекенда
+*При этом backend - django-приложение для бекенда
+
+ - В MIDDLEWARES добавить:
+    - 'corsheaders.middleware.CorsMiddleware',
+    - 'django.middleware.common.CommonMiddleware',
+    
+ - Прописать статику:
+    - STATIC_URL = '/static/'
+    - STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    
+#### 2.2. Модели, сериалайзеры и пр.:
+Сейчас наша цель - собрать приложение на django и react, поэтому разделы 
+models.py и прч. на этом этапе пропустим.
+
+#### 2.3. Сбор статики
+По идее, при пропуске п. 2.2 собирать статику не требуется, однако команды упомянем
+
+##### `python manage.py makemigrations`
+##### `python manage.py migrate`
+
+#### 2.4. Настройка API в django_react/urls.py
+ - Сделать импорты:
+   - from django.urls import path, include
+   - from backend import views - импортируем функции из backend/urls.py
+   
+ - Добавть path:
+   - path('api/', include('backend.api.urls')) - для доступа к классам в backend/api/views.py
+   - path('', views.index) - для отрисовки начальной страницы*
+   
+*Для добавления юрлов для страниц, открываемых с помощью роутинга, достаточно в django_react/urls.py добавить следующий path:
+`path('main', views.index)`, где main - часть адресной строки раздела main
