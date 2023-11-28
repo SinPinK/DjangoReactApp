@@ -4,7 +4,7 @@
 В данном случае я создаю проект в pyCharm, где автоматически заводится virtualenv
 
 #### 1.1. Если необходимо развернуть virtualenv:
-В терминале необходимо набрвть следующие команды:
+В терминале необходимо набрать следующие команды:
 ##### `python -m venv env`
  - развертывание в проекте virtualenv под наименованием env
 
@@ -21,3 +21,11 @@
 
 ##### `python manage.py startapp backend`
  - создание приложения на бэкенд (здесь именуется backend)
+
+#### 2.1. Настройки импорта в django_react/settings.py
+ - В INSTALLED_APPS добавить:
+    - 'rest_framework',
+    - 'corsheaders',
+    - 'backend'
+    
+При этом backend - django-приложение для бекенда
