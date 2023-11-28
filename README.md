@@ -95,10 +95,8 @@ models.py и прч. на этом этапе пропустим.
 Необходимо прописать связь в `django_react/settings.py` между фронтендом и бэкендом
  - В INSTALLED_APPS добавить 'frontend' (если ваше react-приложение названо иначе - используйте другое наименование)
  - В TEMPLATES/DIRS добавить os.path.join(BASE_DIR, 'frontend/build') для сбора стаки из фронта\
- - Добавить:
-   - STATICFILES_DIRS = (
-    (BASE_DIR / 'frontend/build/static'),
-)
+ - Добавить под `STATIC_ROOT = os.path.join(BASE_DIR, 'static')`:
+   - `STATICFILES_DIRS = ((BASE_DIR / 'frontend/build/static'),)`
 
 #### 3.4. Проверка запуска и сборка фронта
 ##### `npm start`
