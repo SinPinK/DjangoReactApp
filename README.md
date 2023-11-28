@@ -22,7 +22,7 @@
 ##### `python manage.py startapp backend`
  - создание приложения на бэкенд (здесь именуется backend)
 
-#### 2.1. Настройки импорта в django_react/settings.py
+#### 2.1. Настройки импорта в `django_react/settings.py`
  - В INSTALLED_APPS добавить:
     - 'rest_framework',
     - 'corsheaders',
@@ -48,7 +48,7 @@ models.py и прч. на этом этапе пропустим.
 ##### `python manage.py makemigrations`
 ##### `python manage.py migrate`
 
-#### 2.4. Настройка API в django_react/urls.py
+#### 2.4. Настройка API в `django_react/urls.py`
  - Сделать импорты:
    - from django.urls import path, include
    - from backend import views - импортируем функции из backend/urls.py
@@ -60,18 +60,18 @@ models.py и прч. на этом этапе пропустим.
 *Для добавления юрлов для страниц, открываемых с помощью роутинга, достаточно в django_react/urls.py добавить следующий path:
 `path('main', views.index)`, где main - часть адресной строки раздела main
 
-#### 2.5. Настройка backend/views.py
+#### 2.5. Настройка `backend/views.py`
  - Добавить импорты:
    - from django.http import request
    
- - Добавить функции (см. здесь в backend/views.py):
+ - Добавить функции (см. здесь в `backend/views.py`):
    - index
    - request_to_detail
    
-#### 2.6. Настройка backend/api/views.py
+#### 2.6. Настройка `backend/api/views.py`
   - Этот файл является основным местом, где прописываеются классы APIView типа
-  - Для дальнейшей работы с этими классами им присваивается url в backend/api/urls (рассмотрим далее в п 2.7)
-  - Наполнение см. здесь в backend/api/views.py
+  - Для дальнейшей работы с этими классами им присваивается url в `backend/api/urls` (рассмотрим далее в п 2.7)
+  - Наполнение см. здесь в `backend/api/views.py`
  
  
  - Добавить импорты:
@@ -86,3 +86,7 @@ models.py и прч. на этом этапе пропустим.
  - frontend - это название нашего react-приложения, можно дать другое
  - Ключ `--skip-git` необходим для развертывания приложения без своей конфигурации git, что позволяет без проблем коммитить события во frontend
 
+#### 3.2. Установка дополнительных компонентов:
+##### `npm i axios reactstrap bootstrap`
+ - Установку необходимо совершать находясь в директории `django_react/frontend`
+ - Чисто для начала рекомендую установить только `axios`
