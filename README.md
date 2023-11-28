@@ -19,7 +19,7 @@
 #### 0.0.1. Создание репозитория в GitHub
 
 Инструкция здесь: https://docs.github.com/ru/get-started/quickstart/create-a-repo
-- не заводить README.md сщздавая репозиторий
+- не заводить README.md создавая репозиторий
 
 #### 0.1.1. Установка
 На macOS:
@@ -110,7 +110,12 @@ models.py и прч. на этом этапе пропустим.
    - import requests - для использования библиотеки requests (необходима для внешней интеграции по REST API)
    - from rest_framework.views import APIView - для объявления класса типа APIView
    - from rest_framework.response import Response - неоходим для связи с фронтендом
-   
+
+#### 0. Добавление изменений в гит
+##### `git add .`
+##### `git commit -m 'commit comment`
+##### `git push origin <branch_name>`
+
 ### 3. Установка, развертывание и "дружба" React-приложения с бэком
 #### 3.1. Установка:
 ##### `npx create-react-app frontend --skip-git`
@@ -136,6 +141,11 @@ models.py и прч. на этом этапе пропустим.
 
 ##### `npm run build`
 Для сборки билда фронтенд-приложения
+
+#### 0. Добавление изменений в гит
+##### `git add .`
+##### `git commit -m 'commit comment`
+##### `git push origin <branch_name>`
 
 ### 4. Запуск
 #### `npm run build` из директории `django_react/frontend`
