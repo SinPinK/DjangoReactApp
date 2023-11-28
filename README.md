@@ -13,8 +13,8 @@
 
 ### 2. Установка Django и запуск django-приложения
 
-##### `pip install django djangorestframework django-cors-headers`
- - установка django, djangorestframework и django-cors-headers
+##### `pip install django djangorestframework django-cors-headers requests`
+ - установка django, djangorestframework, requests и django-cors-headers
 
 ##### `django-admin startproject django_react`
  - старт приложения django (здесь именуется django_react)
@@ -59,3 +59,30 @@ models.py и прч. на этом этапе пропустим.
    
 *Для добавления юрлов для страниц, открываемых с помощью роутинга, достаточно в django_react/urls.py добавить следующий path:
 `path('main', views.index)`, где main - часть адресной строки раздела main
+
+#### 2.5. Настройка backend/views.py
+ - Добавить импорты:
+   - from django.http import request
+   
+ - Добавить функции (см. здесь в backend/views.py):
+   - index
+   - request_to_detail
+   
+#### 2.6. Настройка backend/api/views.py
+  - Этот файл является основным местом, где прописываеются классы APIView типа
+  - Для дальнейшей работы с этими классами им присваивается url в backend/api/urls (рассмотрим далее в п 2.7)
+  - Наполнение см. здесь в backend/api/views.py
+ 
+ 
+ - Добавить импорты:
+   - import requests - для использования библиотеки requests (необходима для внешней интеграции по REST API)
+   - from rest_framework.views import APIView - для объявления класса типа APIView
+   - from rest_framework.response import Response - неоходим для связи с фронтендом
+   
+### 3. Установка, развертывание и "дружба" React-приложения с бэком
+#### 3.1. Установка:
+#### `npx create-react-app frontend --skip-git`
+ - Удостоверьтесь, что находитесь в корневой директории, и введите команду выше
+ - frontend - это название нашего react-приложения, можно дать другое
+ - Ключ `--skip-git` необходим для развертывания приложения без своей конфигурации git, что позволяет без проблем коммитить события во frontend
+
