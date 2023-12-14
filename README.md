@@ -175,5 +175,5 @@ ____________________________________________________
 
 ____________________________________________________
 ### 4. Запуск
-#### `npm run build` из директории `django_react/frontend`
-#### `python manage.py runserver` из директории `django_react`
+##### `npm run build` из директории `django_react/frontend`
+##### `python manage.py runserver` из директории `django_react`
